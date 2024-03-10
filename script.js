@@ -1,4 +1,4 @@
-let createThumbnail = (length, link = '', videoTitle = "thumbnail") => {
+const createThumbnail = (length, link = '', videoTitle = "thumbnail") => {
     let div = document.createElement('div');
     let img = document.createElement('img');
     let span = document.createElement('time');
@@ -25,14 +25,14 @@ let createThumbnail = (length, link = '', videoTitle = "thumbnail") => {
 // https://stackoverflow.com/questions/11832914/how-to-round-to-at-most-2-decimal-places-if-necessary
 // 'Brian ustas' accepted answer
 // specific rounding
-let roundNum = (num) => {
+const roundNum = (num) => {
     return Math.round((num + Number.EPSILON) * 100) / 100;
 };
 
 // Views will be converted in some of these and will maximum convert to Quadrillion number
-let conversions = ['Q', 'T', 'B', 'M', 'K']
+const conversions = ['Q', 'T', 'B', 'M', 'K']
 
-let convertViews = (views = 0) => {
+const convertViews = (views = 0) => {
     // Views will never be negative
     if (views < 0) { views = 0; }
 
@@ -53,9 +53,9 @@ let convertViews = (views = 0) => {
 };
 
 // Capitalize the word
-let capitalize = (word) => word[0].toUpperCase() + word.slice(1,);
+const capitalize = (word) => word[0].toUpperCase() + word.slice(1,);
 
-let createVideoTitleAndStuff = (title, cName, views, monthsOld) => {
+const createVideoTitleAndStuff = (title, cName, views, monthsOld) => {
     let videoMeta = document.createElement('div'), titleDiv = document.createElement('span'), groupDiv = document.createElement('div');
 
     // Title and videoMeta classes
@@ -90,7 +90,7 @@ let createVideoTitleAndStuff = (title, cName, views, monthsOld) => {
     return videoMeta;
 }
 
-let createCard = (title, channelName, views, monthsOld, lengthOfVideo, thumbnail = '') => {
+const createCard = (title, channelName, views, monthsOld, lengthOfVideo, thumbnail = '') => {
     // getting the container in which the created element will be appended
     let container = document.querySelector('.container');
     // Card element
