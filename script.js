@@ -1,7 +1,7 @@
 let createThumbnail = (length, link = '', videoTitle = "thumbnail") => {
     let div = document.createElement('div');
     let img = document.createElement('img');
-    let span = document.createElement('div');
+    let span = document.createElement('time');
 
     // Setting img attributes
     img.src = (link === '') ? `https://source.unsplash.com/random/300x190?sig=${Math.random()}` : link;
